@@ -180,8 +180,37 @@
     <div class="flex flex-wrap">
         <nav class="w-full sm:w-1/5 border bg-gray-0 p-2 space-y-4">
             <!-- Menu Container (same as before) -->
+            <div class="menu-container">
+                <button class="button" onclick="toggleDropdown('menu1')">Menu 1</button>
+                <div id="menu1" class="dropdown1">               
+                    <a href="#" class="button1">Link 1</a>
+                    <a href="#" class="button1">Link 2</a>
+                    <a href="#" class="button1">Link 3</a>
+                    <a href="#" class="button1">Link 4</a>
+                    <a href="#" class="button1">Link 5</a>
+                    <a href="#" class="button1">Link 6</a>
+                </div>
+            </div>
+            
+            <div class="menu-container">
+                <button class="button" onclick="toggleDropdown('menu2')">Menu 2</button>
+                <div id="menu2" class="dropdown2">
+                    <a href="#" class="button1">Link 1</a>
+                    <a href="#" class="button1">Link 2</a>
+                    <a href="#" class="button1">Link 3</a>
+                </div>
+            </div>
+
+            <div class="menu-container">
+                <button class="button" onclick="toggleDropdown('menu3')">Menu 3</button>
+                <div id="menu3" class="dropdown3">
+                    <a href="#" class="button1">Link 1</a>
+                    <a href="#" class="button1">Link 2</a>
+                    <a href="#" class="button1">Link 3</a>
+                </div>
+            </div>
         </nav>
-        
+         
         <!-- Main Content -->
         <main class="w-full sm:w-3/5 p-4">
             <iframe class="w-full h-64 bg-gray-300" src=""></iframe>
