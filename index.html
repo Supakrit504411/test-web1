@@ -98,7 +98,7 @@
             position: absolute;
             width: 100px;
             background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
-            height: 130%;
+            height: 110%;
             animation: rotBGimg 3s linear infinite;
             transition: all 0.2s linear;
         }
@@ -117,12 +117,17 @@
             z-index: 1;
         }
 
-        .card-content {
+        .card {
             position: relative;
             z-index: 2;
             color: white;
         }
-
+		.carousel img {
+            position: relative;
+            z-index: 2;
+            color: white;
+            size: 80%;
+        }
 
         .dropdown1 {
             display: none;
@@ -167,7 +172,11 @@
             display: flex;
             
                       }
-    
+    .carousel img {
+      display: none;
+    }
+    .carousel img.active {
+      display: block;
     </style>
 </head>
 <body class="bg-gray-100">
@@ -194,8 +203,12 @@
             <div class="menu-container">
                 <button class="button" onclick="toggleDropdown('menu1')">Menu 1</button>
                 <div id="menu1" class="mx-3 dropdown1">               
-                    <a href="#" class="button1">Link 1</a>
-                    <a href="#" class="button1">Link 2</a>
+                    
+                    
+                    <button class="w-full flex items-center space-x-2 p-1 bg-fuchsia-800 rounded-sm hover:bg-fuchsia-600/50" onclick="loadContent('https://lookerstudio.google.com/embed/reporting/234cee86-0d5b-4b66-a5fc-320c25a6f054/page/p_lpizw7b8od')">DashBoard VOC</button>
+                    
+                    <button class="w-full flex items-center space-x-2 p-1 bg-fuchsia-800 rounded-sm hover:bg-fuchsia-600/50" onclick="loadContent('https://lookerstudio.google.com/embed/reporting/1116af29-60ac-43fb-a492-4aaa6fb12c4a/page/p_qc71gi1fpd')">Dashboard Privilege</button>
+                    
                     <a href="#" class="button1">Link 3</a>
                     <a href="#" class="button1">Link 4</a>
                     <a href="#" class="button1">Link 5</a>
@@ -207,8 +220,8 @@
                 <button class="button" onclick="toggleDropdown('menu2')">Menu 2</button>
                 <div id="menu2" class="mx-3 dropdown2">
                     <a href="https://sabuyservice.pea.co.th/" class="button1 dark md hover:bg-fuchsia-600/50">sabuyservice</a>
-                    <a href="https://www.pea.co.th/our-services/download/customer-guideline" class="button1">เว็บไซต์ PEA</a>
-                    <a href="https://peasolar.pea.co.th/package-lists" class="button1">PEA SOLAR</a>
+                    <a href="https://www.pea.co.th/our-services/download/customer-guideline" class="button1 dark md hover:bg-fuchsia-600/50">เว็บไซต์ PEA</a>
+                    <a href="https://peasolar.pea.co.th/package-lists" class="button1">PEA SOLAR dark md hover:bg-fuchsia-600/50</a>
                 </div>
             </div>
 
@@ -224,7 +237,17 @@
          
         <!-- Main Content -->
         <main class="w-full sm:w-3/5 p-4">
-            <iframe class="w-full h-64 bg-gray-300" src=""></iframe>
+                         
+          <iframe class="w-full h-64 bg-gray-300" src="https://www.youtube.com/embed/F5oluJAoXCI" frameborder="0" allowfullscreen></iframe>
+           <!-- Fullscreen Button -->
+        <div class="mb-4">
+          <button id="fullscreen-btn" class="p-3 bg-green-500 text-white rounded-lg hover:bg-green-400" onclick="toggleFullscreen()">Fullscreen</button>
+        </div>
+         <!-- No.8: Content Display Area -->
+        <div id="content-area" class="flex-grow bg-white p-4 border rounded-lg">
+          <h2 class="text-xl font-semibold">Welcome!</h2>
+          <p>Select a menu item to load content here.</p>
+        </div>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
                 <div class="bg-white p-4 shadow">Content 1</div>
                 <div class="bg-white p-4 shadow">Content 2</div>
@@ -242,16 +265,22 @@
         </main>
 
         <!-- Right Sidebar -->
-        <aside class="w-full sm:w-1/5 bg-gray-200 p-2">
+        <aside class="w-full sm:w-1/5 bg-gray-0 p-2">
             <div class="card mb-1">
-                <div class="card-content">Image Carousel</div>
-            </div>
-            <div class="bg-gray-500 text-white p-2 rounded text-center"><a href="#" class="button1">Link 30</a></div>
-            <div class="bg-gray-400 p-4 text-center">29 (Video Carousel)</div>
-            <div class="bg-gray-500 text-white p-2 rounded text-center"><a href="#" class="button1">Link 31</a></div>
+                <div class="carousel img">
+                <!-- No.9: Carousel -->
+     
+          <img src="https://i.postimg.cc/xjKg3fX3/PEA-A5.jpg" class="w-full h-150 object-cover rounded-lg active">
+          <img src="https://i.postimg.cc/qBPPN0MJ/IMG-6993-jpeg.webp" class="w-full h-150 object-cover rounded-lg">
+          <img src="https://i.postimg.cc/59B3mMSN/jpg.webp" class="w-full h-150 object-cover rounded-lg">
+          <img src="https://i.postimg.cc/0QfzbZ7x/0-jpg.webp" class="w-full h-150 object-cover rounded-lg">
+          <img src="https://i.postimg.cc/T113hxRq/S-5087797-jpg.webp" class="w-full h-150 object-cover rounded-lg">
+          
+           
         </aside>
+        
 
-    </div>
+     </div>
 
     <!-- Footer -->
     <footer class="bg-gray-500 text-white p-2 bm-2 text-center">
@@ -262,6 +291,40 @@
         function toggleDropdown(menuId) {
             document.getElementById(menuId).classList.toggle('show');
         }
+         
+    function loadContent(page) {
+      document.getElementById('content-area').innerHTML = `<iframe src="${page}" class="w-full h-full border-none"></iframe>`;
+    }
+    // Fullscreen Function
+    function toggleFullscreen() {
+      const contentArea = document.getElementById('content-area');
+      if (!document.fullscreenElement) {
+        contentArea.requestFullscreen();
+      } else {
+        document.exitFullscreen();
+      }
+    }
+    document.addEventListener("fullscreenchange", () => {
+      if (!document.fullscreenElement) {
+        document.getElementById('content-area').classList.remove('fullscreen');
+      }
+});
+
+// Carousel Functionality
+    let carouselIndex = 0;
+    function showNextImage() {
+      const images = document.querySelectorAll('.carousel img');
+      images[carouselIndex].classList.remove('active');
+      carouselIndex = (carouselIndex + 1) % images.length;
+      images[carouselIndex].classList.add('active');
+    }
+    setInterval(showNextImage, 3000);
+
+    // Visitor Counter
+    let visitorCount = localStorage.getItem('visitorCount') || 0;
+    visitorCount++;
+    localStorage.setItem('visitorCount', visitorCount);
+    document.getElementById('visitor-counter').textContent = `Visitors: ${visitorCount}`;
     </script>
 </body>
 </html>
