@@ -6,8 +6,7 @@
     <title>Web Layout</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Existing Styles... (no change needed) */
-.button {
+        .button {
             position: relative;
             width: 120px;
             height: 40px;
@@ -59,7 +58,20 @@
         .button:active::before {
             scale: 0.7;
         }
-        
+        .button2 {
+            position: relative;
+            width: 80px;
+            height: 40px;
+            background-color: none;
+            display: flex;
+            align-items: center;
+            color: white;
+            justify-content: center;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
         /* Custom Card Animation */
         .card {
             width: 150px;
@@ -147,29 +159,27 @@
             display: flex;
             
                       }
-    
-
     </style>
 </head>
 <body class="bg-gray-100">
     <!-- Header Section -->
     <header class="flex justify-between items-center bg-blue-600 text-white p-4">
-        <div class="w-12 h-12 rounded-full bg-gray-300"></div>
+        <div class="w-24 h-24 rounded-full bg-gray-500"></div>
         <h1 class="text-xl">Webpage Name</h1>
-        <div class="flex space-x-2">
-            <button class="button">Home</button>
-            <button class="button">Contact</button>
-            <button class="button">Profile</button>
+        <div class="flex space-x-1">
+            <button class="button2">Home</button>
+            <button class="button2">Contact</button>
+            <button class="button2">Profile</button>
+            
         </div>
     </header>
 
     <marquee class="bg-gradient-to-r from-blue-500 to-blue-800 text-white p-2">Scrolling News</marquee>
 
-    <div class="flex flex-wrap">
-        <!-- Navigation (Sidebar) -->
-        <nav class="w-full sm:w-1/5 border bg-gray-0 p-2 space-y-4">
+    <div class="flex">
+        <nav class="w-1/5 border bg-gray-0 p-2 space-y-4">
             <div class="menu-container">
-                <button class="button" onclick="toggleDropdown('menu1')">Menu 1</button>
+             <button class="button" onclick="toggleDropdown('menu1')">Menu 1</button>
                 <div id="menu1" class="dropdown1">               
                     <a href="#" class="button1">Link 1</a>
                     <a href="#" class="button1">Link 2</a>
@@ -177,6 +187,8 @@
                     <a href="#" class="button1">Link 4</a>
                     <a href="#" class="button1">Link 5</a>
                     <a href="#" class="button1">Link 6</a>
+                   
+                   
                 </div>
             </div>
             
@@ -199,11 +211,12 @@
             </div>
         </nav>
        
-        <!-- Main Content -->
-        <main class="w-full sm:w-3/5 p-4">
+
+		<!-- Main Content -->
+        <main class="w-3/5 p-4">
             <iframe class="w-full h-64 bg-gray-300" src=""></iframe>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
-                <!-- Content Grid -->
+            <div class="grid grid-cols-3 gap-4 mt-4">
+            <!-- Content Grid -->
                 <div class="bg-white p-4 shadow">Content 1</div>
                 <div class="bg-white p-4 shadow">Content 2</div>
                 <div class="bg-white p-4 shadow">Content 3</div>
@@ -212,7 +225,7 @@
                 <div class="bg-white p-4 shadow">Content 6</div>
             </div>
             <!-- หมายเลข 32-35 -->
-            <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 mt-4"> 
+            <div class="grid grid-cols-4 gap-4 mt-4"> 
                 <div class="bg-gray-300 h-24"></div>
                 <div class="bg-gray-300 h-24"></div>
                 <div class="bg-gray-300 h-24"></div>
@@ -220,17 +233,23 @@
             </div>
         </main>
 
-        <!-- Right Sidebar -->
-        <aside class="w-full sm:w-1/5 bg-gray-200 p-2">
+         <!-- Right Sidebar -->
+        <aside class="w-1/5 bg-gray-200 p-2">
             <div class="card mb-1">
-                <div class="card-content">Image Carousel</div>
+            <div class="card-content">Image Carousel</div>
+             </div>
+            <div class="bg-gray-500 text-white p-2 rounded text-center"><a href="#" class="button1">Link 30</a>
+            
             </div>
-            <div class="bg-gray-500 text-white p-2 rounded text-center"><a href="#" class="button1">Link 30</a></div>
-            <div class="w-full sm:w-1/5 bg-gray-200 p-10 space-y-2"></div>
+           
+            <div class="w-1/5 bg-gray-200 p-10 space-y-2"></div>
+            
             <div class="bg-gray-400 p-4 text-center">29 (Video Carousel)</div>
-            <div class="w-full sm:w-1/5 bg-gray-200 p-1 space-y-2"></div>
-            <div class="bg-gray-500 text-white p-2 rounded text-center"><a href="#" class="button1">Link 31</a></div>
+            <div class="w-1/5 bg-gray-200 p-1 space-y-2"></div>
+            <div class="bg-gray-500 text-white p-2 rounded text-center"><a href="#" class="button1">Link 31</a>
+            </div>
         </aside>
+
     </div>
 
     <!-- Footer -->
@@ -244,12 +263,12 @@
         }
         
         function w3_open() {
-            document.getElementById("mySidebar").style.display = "block";
-        }
+  document.getElementById("mySidebar").style.display = "block";
+}
 
-        function w3_close() {
-            document.getElementById("mySidebar").style.display = "none";
-        }
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
     </script>
 </body>
 </html>
