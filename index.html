@@ -66,13 +66,20 @@
             background-color: none;
             display: flex;
             align-items: center;
-            color: white;
+            
             justify-content: center;
             border: none;
             border-radius: 8px;
             cursor: pointer;
             font-size: 16px;
         }
+        .button2:hover {
+            color: black;
+            background-color: yellow;
+            font-size: 16px;
+            display: flex;
+            
+            }
         /* Custom Card Animation */
         .card {
             width: 150px;
@@ -166,8 +173,12 @@
 <body class="bg-gray-100">
     <!-- Header Section -->
     <header class="flex justify-between items-center bg-blue-600 text-white p-4">
-        <div class="w-24 h-24 rounded-full bg-gray-500"></div>
-        <h1 class="text-xl">Webpage Name</h1>
+        
+        <div>
+        <img src="https://i.postimg.cc/gjypPggg/DSC-6805-1.jpg" alt="Logo" class="w-28 h-28 rounded-full border-4 border-white">
+      </div>
+      
+        <h1 class="text-xl underline mx-5">แผนกบริการและลูกค้าสัมพันธ์ (นครพนม)</h1>
         <div class="flex space-x-1">
             <button class="button2">Home</button>
             <button class="button2">Contact</button>
@@ -182,7 +193,7 @@
             <!-- Menu Container (same as before) -->
             <div class="menu-container">
                 <button class="button" onclick="toggleDropdown('menu1')">Menu 1</button>
-                <div id="menu1" class="dropdown1">               
+                <div id="menu1" class="mx-3 dropdown1">               
                     <a href="#" class="button1">Link 1</a>
                     <a href="#" class="button1">Link 2</a>
                     <a href="#" class="button1">Link 3</a>
@@ -194,16 +205,16 @@
             
             <div class="menu-container">
                 <button class="button" onclick="toggleDropdown('menu2')">Menu 2</button>
-                <div id="menu2" class="dropdown2">
-                    <a href="#" class="button1">Link 1</a>
-                    <a href="#" class="button1">Link 2</a>
-                    <a href="#" class="button1">Link 3</a>
+                <div id="menu2" class="mx-3 dropdown2">
+                    <a href="https://sabuyservice.pea.co.th/" class="button1 dark md hover:bg-fuchsia-600/50">sabuyservice</a>
+                    <a href="https://www.pea.co.th/our-services/download/customer-guideline" class="button1">เว็บไซต์ PEA</a>
+                    <a href="https://peasolar.pea.co.th/package-lists" class="button1">PEA SOLAR</a>
                 </div>
             </div>
 
             <div class="menu-container">
                 <button class="button" onclick="toggleDropdown('menu3')">Menu 3</button>
-                <div id="menu3" class="dropdown3">
+                <div id="menu3" class="mx-3 dropdown3">
                     <a href="#" class="button1">Link 1</a>
                     <a href="#" class="button1">Link 2</a>
                     <a href="#" class="button1">Link 3</a>
